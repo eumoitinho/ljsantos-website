@@ -1,0 +1,45 @@
+{
+  "files": [
+    {
+      "path": "app/cromagem/page.tsx",
+      "issues": [
+        {
+          "line": 10,
+          "text": "Complete solutions for industrial chrome plating processes with high efficiency ",
+          "preview": "description: \"Complete solutions for industrial chrome plating processes with high efficiency and su"
+        }
+      ]
+    },
+    {
+      "path": "app/estacoes-tratamento/layout.tsx",
+      "issues": [
+        {
+          "line": 7,
+          "text": "Complete and efficient solutions for industrial wastewater treatment, ensuring e",
+          "preview": "\"Complete and efficient solutions for industrial wastewater treatment, ensuring environmental compli"
+        }
+      ]
+    },
+    {
+      "path": "app/filtro-prensa/page.tsx",
+      "issues": [
+        {
+          "line": 11,
+          "text": "Efficient solutions for solid-liquid separation, ensuring high performance and o",
+          "preview": "\"Efficient solutions for solid-liquid separation, ensuring high performance and operational economy "
+        }
+      ]
+    },
+    {
+      "path": "app/zincagem/page.tsx",
+      "issues": [
+        {
+          "line": 11,
+          "text": "High-quality anti-corrosion protection for metal components, ensuring durability",
+          "preview": "\"High-quality anti-corrosion protection for metal components, ensuring durability and resistance.\","
+        }
+      ]
+    }
+  ],
+  "totalIssues": 4
+}

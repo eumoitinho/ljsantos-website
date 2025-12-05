@@ -30,6 +30,7 @@ export default function EstacoesTratamento() {
       <section className="relative pt-32 text-white py-16 min-h-[70vh] flex items-center">
         <div className="absolute inset-0 overflow-hidden">
           <video className="absolute inset-0 w-full h-full object-cover" autoPlay muted loop playsInline>
+            <source src="/videos/ete-hero.mp4" type="video/mp4" />
             <source src="/videos/ete-hero.mov" type="video/quicktime" />
           </video>
           <div className="absolute inset-0 bg-black/50"></div>

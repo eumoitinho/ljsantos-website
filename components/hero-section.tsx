@@ -17,6 +17,7 @@ const HeroSection = () => {
     <section className="relative h-screen flex items-center justify-center">
       <ClientWrapper>
         <video className="hero-video absolute inset-0 w-full h-full object-cover" autoPlay muted loop playsInline>
+          <source src="/videos/home-hero.mp4" type="video/mp4" />
           <source src="/videos/home-hero.mov" type="video/quicktime" />
         </video>
       </ClientWrapper>

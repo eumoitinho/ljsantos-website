@@ -18,8 +18,8 @@ export interface SanityPost {
   title: string
   slug: {current: string}
   excerpt?: string
-  mainImage?: any
-  author?: string
+  mainImage?: {asset?: any; alt?: string; caption?: string}
+  author?: {name?: string; image?: any}
   categories?: { _id: string; title: string; slug?: {current: string} }[]
   publishedAt?: string
   body?: any[]
@@ -33,6 +33,7 @@ export async function fetchPosts(limit = 12) {
     slug,
     excerpt,
     mainImage,
+    "author": author->{name, image},
     publishedAt,
     categories[]->{_id, title, slug}
   }`
@@ -47,6 +48,7 @@ export async function fetchPostBySlug(slug: string) {
     excerpt,
     mainImage,
     publishedAt,
+    "author": author->{name, image},
     categories[]->{_id, title, slug},
     body
   }`

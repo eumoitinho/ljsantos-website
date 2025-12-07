@@ -37,17 +37,7 @@ export default function FilterPressPage() {
                 <TranslatedContent translationKey="filterPress.cta" />
               </button>
             </div>
-            <div className="md:w-1/2">
-              <div className="relative h-64 md:h-96 w-full rounded-lg overflow-hidden shadow-2xl">
-                <Image
-                  src="/images/filtro-prensa-hero.jpg"
-                  alt="Filtro Prensa LJ Santos"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-            </div>
+            
           </div>
         </div>
       </section>
@@ -71,7 +61,13 @@ export default function FilterPressPage() {
               </p>
             </div>
             <div className="relative h-64 md:h-80 w-full rounded-lg overflow-hidden shadow-lg">
-              <Image src="/images/filtro-prensa-2.jpeg" alt="Filtro Prensa LJ Santos" fill className="object-cover" />
+              <Image
+                  src="/images/filtro-prensa-hero.jpg"
+                  alt="Filtro Prensa LJ Santos"
+                  fill
+                  className="object-cover"
+                  priority
+                />
             </div>
           </div>
         </div>
@@ -86,7 +82,7 @@ export default function FilterPressPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             <div className="relative h-64 md:h-80 w-full rounded-lg overflow-hidden shadow-lg">
-              <Image src="/images/filtro-prensa-3.png" alt="Filter Press in Operation" fill className="object-cover" />
+              <Image src="/images/filtro-prensa-torta.jpeg" alt="Filter Press in Operation" fill className="object-cover" />
             </div>
             <div>
               <h3 className="text-2xl font-bold mb-4">

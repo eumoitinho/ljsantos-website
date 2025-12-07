@@ -84,7 +84,7 @@ export default function EstacoesTratamento() {
                 <ImageGallery
                   images={[
                     {
-                      src: "/images/estacao-continua-1.jpeg",
+                      src: "/images/ete-hero.jpg",
                       alt: "LJ Santos Wastewater Treatment Stations",
                     },
                   ]}
@@ -92,7 +92,7 @@ export default function EstacoesTratamento() {
                 />
                 <div className="relative aspect-video w-full cursor-pointer overflow-hidden rounded-2xl group">
                   <Image
-                    src="/images/estacao-continua-1.jpeg"
+                    src="/images/ete-hero.jpg"
                     alt="LJ Santos Wastewater Treatment Stations"
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"

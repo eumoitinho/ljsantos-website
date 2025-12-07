@@ -185,7 +185,7 @@ export default function Home() {
                     <div className="h-full flex flex-col">
                       <div className="relative h-64 mb-6 rounded-xl overflow-hidden">
                         <Image
-                          src="/images/exhibition-stand.jpeg"
+                          src="/images/contato-hero.jpg"
                           alt="LJ Santos Customer Service"
                           fill
                           className="object-cover"

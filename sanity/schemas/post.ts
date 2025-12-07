@@ -28,7 +28,19 @@ export default defineType({
       name: 'mainImage',
       title: 'Imagem Principal',
       type: 'image',
-      options: {hotspot: true}
+      options: {hotspot: true},
+      fields: [
+        {
+          name: 'alt',
+          title: 'Texto alternativo',
+          type: 'string'
+        },
+        {
+          name: 'caption',
+          title: 'Legenda',
+          type: 'string'
+        }
+      ]
     },
     {
       name: 'author',
@@ -64,7 +76,48 @@ export default defineType({
       title: 'Conteúdo',
       type: 'array',
       of: [
-        {type: 'block'},
+        {
+          type: 'block',
+          styles: [
+            {title: 'Normal', value: 'normal'},
+            {title: 'Título H1', value: 'h1'},
+            {title: 'Título H2', value: 'h2'},
+            {title: 'Título H3', value: 'h3'},
+            {title: 'Citação', value: 'blockquote'}
+          ],
+          lists: [
+            {title: 'Lista', value: 'bullet'},
+            {title: 'Lista numerada', value: 'number'}
+          ],
+          marks: {
+            decorators: [
+              {title: 'Negrito', value: 'strong'},
+              {title: 'Itálico', value: 'em'},
+              {title: 'Sublinhado', value: 'underline'},
+              {title: 'Código', value: 'code'}
+            ],
+            annotations: [
+              {
+                name: 'link',
+                type: 'object',
+                title: 'Link',
+                fields: [
+                  {
+                    name: 'href',
+                    type: 'url',
+                    title: 'URL'
+                  },
+                  {
+                    name: 'newTab',
+                    type: 'boolean',
+                    title: 'Abrir em nova aba',
+                    initialValue: true
+                  }
+                ]
+              }
+            ]
+          }
+        },
         {
           type: 'image',
           options: {hotspot: true},
@@ -73,6 +126,67 @@ export default defineType({
               name: 'alt',
               title: 'Texto alternativo',
               type: 'string'
+            },
+            {
+              name: 'caption',
+              title: 'Legenda',
+              type: 'string'
+            }
+          ]
+        },
+        {
+          type: 'object',
+          name: 'callout',
+          title: 'Caixa de destaque',
+          fields: [
+            {
+              name: 'tone',
+              title: 'Estilo',
+              type: 'string',
+              options: {
+                list: [
+                  {title: 'Informativo', value: 'info'},
+                  {title: 'Sucesso', value: 'success'},
+                  {title: 'Aviso', value: 'warning'}
+                ]
+              },
+              initialValue: 'info'
+            },
+            {
+              name: 'title',
+              title: 'Título',
+              type: 'string'
+            },
+            {
+              name: 'body',
+              title: 'Texto',
+              type: 'text'
+            }
+          ]
+        },
+        {
+          type: 'code',
+          name: 'codeBlock',
+          title: 'Código',
+          options: {
+            withFilename: true
+          }
+        },
+        {
+          type: 'object',
+          name: 'embed',
+          title: 'Embed (vídeo ou mapa)',
+          fields: [
+            {
+              name: 'title',
+              title: 'Título',
+              type: 'string'
+            },
+            {
+              name: 'url',
+              title: 'URL',
+              type: 'url',
+              validation: (rule: any) => rule.uri({allowRelative: false, scheme: ['http', 'https']})
             }
           ]
         }

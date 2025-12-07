@@ -36,7 +36,7 @@ export default function WhyChooseUs() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/industrial-facility.png"
+            src="/images/homepage01.jpg"
             alt="Industrial background"
             fill
             className="object-cover"
@@ -120,7 +120,7 @@ export default function WhyChooseUs() {
               <div className="text-white text-center md:text-right">
                 <p className="font-bold">(47) 3427-5414</p>
                 <p className="font-bold">(47) 9983-0386</p>
-                <p>ljsantos@ljsantos.ind.br</p>
+                <p>comercial@ljsantos.ind.br</p>
               </div>
               <a
                 href="/solicite-orcamento"

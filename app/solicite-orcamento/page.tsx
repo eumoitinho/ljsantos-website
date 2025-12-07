@@ -87,8 +87,8 @@ export default function SolicitarOrcamento() {
                 <h3 className="text-lg font-semibold mb-2">
                   <TranslatedContent translationKey="contact.otherContactMethods.email" />
                 </h3>
-                <p className="text-gray-600 mb-2">ljsantos@ljsantos.ind.br</p>
-                <a href="mailto:ljsantos@ljsantos.ind.br" className="text-[#435a52] hover:underline">
+                <p className="text-gray-600 mb-2">comercial@ljsantos.ind.br</p>
+                <a href="mailto:comercial@ljsantos.ind.br" className="text-[#435a52] hover:underline">
                   <TranslatedContent translationKey="contact.otherContactMethods.sendEmail" />
                 </a>
               </div>

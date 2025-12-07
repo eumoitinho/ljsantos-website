@@ -17,7 +17,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-[#435a52] text-white pt-16 pb-8">
+    <footer className="bg-[#1C4837] text-white pt-16 pb-8">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo and Description */}
@@ -99,7 +99,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">{t("common.quickLinks")}</h3>
+            <h3 className="text-lg text-white font-semibold mb-4">{t("common.quickLinks")}</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/" className="text-gray-300 hover:text-white transition-colors">
@@ -136,7 +136,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">{t("common.contact")}</h3>
+            <h3 className="text-lg font-semibold text-white mb-4">{t("common.contact")}</h3>
             <ul className="space-y-4">
               <li className="flex items-start">
                 <svg
@@ -227,7 +227,7 @@ export default function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">{t("blog.newsletter.title")}</h3>
+            <h3 className="text-lg text-white font-semibold mb-4">{t("blog.newsletter.title")}</h3>
             <p className="text-gray-300 mb-4">{t("blog.newsletter.description")}</p>
             <form className="flex flex-col sm:flex-row gap-2">
               <input

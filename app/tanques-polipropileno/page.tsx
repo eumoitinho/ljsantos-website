@@ -40,17 +40,7 @@ export default function PPTanksPage() {
                 <TranslatedContent translationKey="ppTanks.requestQuote" />
               </button>
             </div>
-            <div className="md:w-1/2">
-              <div className="relative h-64 md:h-96 w-full rounded-lg overflow-hidden shadow-2xl">
-                <Image
-                  src="/images/tanques-hero.jpg"
-                  alt="Tanques de Polipropileno LJ Santos"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-            </div>
+           
           </div>
         </div>
       </section>

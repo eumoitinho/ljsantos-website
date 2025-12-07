@@ -31,7 +31,10 @@ export const blockContentType = defineType({
         {title: 'H4', value: 'h4'},
         {title: 'Quote', value: 'blockquote'},
       ],
-      lists: [{title: 'Bullet', value: 'bullet'}],
+      lists: [
+        {title: 'Bullet', value: 'bullet'},
+        {title: 'Numbered', value: 'number'}
+      ],
       // Marks let you mark up inline text in the Portable Text Editor
       marks: {
         // Decorators usually describe a single property – e.g. a typographic
@@ -39,6 +42,9 @@ export const blockContentType = defineType({
         decorators: [
           {title: 'Strong', value: 'strong'},
           {title: 'Emphasis', value: 'em'},
+          {title: 'Underline', value: 'underline'},
+          {title: 'Code', value: 'code'},
+          {title: 'Highlight', value: 'highlight'},
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
@@ -51,7 +57,14 @@ export const blockContentType = defineType({
                 title: 'URL',
                 name: 'href',
                 type: 'url',
+                validation: (Rule) => Rule.required()
               },
+              {
+                title: 'Abrir em nova aba',
+                name: 'blank',
+                type: 'boolean',
+                initialValue: true
+              }
             ],
           },
         ],
@@ -69,8 +82,74 @@ export const blockContentType = defineType({
           name: 'alt',
           type: 'string',
           title: 'Alternative Text',
+        },
+        {
+          name: 'caption',
+          type: 'string',
+          title: 'Legenda (opcional)',
         }
       ]
     }),
+    defineArrayMember({
+      name: 'callout',
+      title: 'Caixa de destaque',
+      type: 'object',
+      fields: [
+        {
+          name: 'tone',
+          type: 'string',
+          title: 'Tom',
+          options: {
+            list: [
+              {title: 'Informação', value: 'info'},
+              {title: 'Aviso', value: 'warning'},
+              {title: 'Sucesso', value: 'success'}
+            ],
+            layout: 'radio'
+          },
+          initialValue: 'info'
+        },
+        {name: 'title', type: 'string', title: 'Título'},
+        {name: 'body', type: 'text', rows: 3, title: 'Conteúdo'}
+      ]
+    }),
+    defineArrayMember({
+      name: 'video',
+      title: 'Vídeo incorporado',
+      type: 'object',
+      fields: [
+        {
+          name: 'url',
+          type: 'url',
+          title: 'URL do vídeo (YouTube, Vimeo)',
+          validation: (Rule) => Rule.required()
+        },
+        {
+          name: 'caption',
+          type: 'string',
+          title: 'Legenda'
+        }
+      ]
+    }),
+    defineArrayMember({
+      type: 'rule',
+      name: 'divider',
+      title: 'Separador'
+    }),
+    defineArrayMember({
+      name: 'codeBlock',
+      title: 'Código',
+      type: 'code',
+      options: {withFilename: true}
+    }),
+    defineArrayMember({
+      name: 'embed',
+      title: 'Embed',
+      type: 'object',
+      fields: [
+        {name: 'url', type: 'url', title: 'URL incorporada', validation: (Rule) => Rule.required()},
+        {name: 'title', type: 'string', title: 'Título'}
+      ]
+    })
   ],
 })

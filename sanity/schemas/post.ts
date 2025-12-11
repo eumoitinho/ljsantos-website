@@ -9,14 +9,14 @@ export default defineType({
       name: 'title',
       title: 'Título',
       type: 'string',
-  validation: (rule: any) => rule.required()
+      validation: (rule: any) => rule.required()
     },
     {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
       options: {source: 'title', maxLength: 96},
-  validation: (rule: any) => rule.required()
+      validation: (rule: any) => rule.required()
     },
     {
       name: 'excerpt',
@@ -165,12 +165,48 @@ export default defineType({
           ]
         },
         {
-          type: 'code',
+          type: 'object',
+          name: 'video',
+          title: 'Vídeo do YouTube',
+          fields: [
+            {
+              name: 'url',
+              title: 'URL do vídeo (YouTube)',
+              type: 'url',
+              description: 'Cole a URL completa do YouTube (watch, share ou embed).',
+              validation: (rule: any) =>
+                rule
+                  .required()
+                  .uri({scheme: ['http', 'https']})
+                  .regex(/(youtu\\.be\\/|youtube\\.com\\/(watch\\?v=|embed\\/|shorts\\/))/i, {
+                    name: 'YouTube URL',
+                    message: 'Use um link do YouTube (youtu.be ou youtube.com/watch?v=...)'
+                  })
+            },
+            {
+              name: 'caption',
+              title: 'Legenda',
+              type: 'string'
+            }
+          ]
+        },
+        {
           name: 'codeBlock',
           title: 'Código',
-          options: {
-            withFilename: true
-          }
+          type: 'object',
+          fields: [
+            {name: 'filename', title: 'Nome do arquivo', type: 'string'},
+            {name: 'language', title: 'Linguagem', type: 'string'},
+            {name: 'code', title: 'Código', type: 'text', rows: 6, validation: (rule: any) => rule.required()}
+          ]
+        },
+        {
+          type: 'object',
+          name: 'divider',
+          title: 'Separador',
+          fields: [
+            {name: 'style', type: 'string', initialValue: 'line', hidden: true}
+          ]
         },
         {
           type: 'object',

@@ -5,7 +5,7 @@ import {urlFor} from '@/lib/sanity'
 
 const toEmbedUrl = (url: string) => {
   if (!url) return ''
-  const youtube = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([\w-]{11})/)
+  const youtube = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/)
   if (youtube?.[1]) return `https://www.youtube.com/embed/${youtube[1]}`
   const vimeo = url.match(/vimeo\.com\/(\d+)/)
   if (vimeo?.[1]) return `https://player.vimeo.com/video/${vimeo[1]}`

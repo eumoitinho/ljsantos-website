@@ -115,14 +115,21 @@ export const blockContentType = defineType({
     }),
     defineArrayMember({
       name: 'video',
-      title: 'Vídeo incorporado',
+      title: 'Vídeo do YouTube',
       type: 'object',
       fields: [
         {
           name: 'url',
           type: 'url',
-          title: 'URL do vídeo (YouTube, Vimeo)',
-          validation: (Rule) => Rule.required()
+          title: 'URL do vídeo (YouTube)',
+          description: 'Cole a URL completa do YouTube (watch, share ou embed).',
+          validation: (Rule) =>
+            Rule.required()
+              .uri({scheme: ['http', 'https']})
+              .regex(/(youtu\.be\/|youtube\.com\/(watch\?v=|embed\/|shorts\/))/i, {
+                name: 'YouTube URL',
+                message: 'Use um link do YouTube (youtu.be ou youtube.com/watch?v=...)',
+              })
         },
         {
           name: 'caption',
@@ -132,15 +139,36 @@ export const blockContentType = defineType({
       ]
     }),
     defineArrayMember({
-      type: 'rule',
       name: 'divider',
-      title: 'Separador'
+      title: 'Separador',
+      type: 'object',
+      fields: [
+        {
+          name: 'style',
+          type: 'string',
+          initialValue: 'line',
+          hidden: true,
+        },
+      ],
+      preview: {
+        prepare: () => ({title: 'Separador', subtitle: 'Linha divisória'}),
+      },
     }),
     defineArrayMember({
       name: 'codeBlock',
       title: 'Código',
-      type: 'code',
-      options: {withFilename: true}
+      type: 'object',
+      fields: [
+        {name: 'filename', type: 'string', title: 'Nome do arquivo'},
+        {name: 'language', type: 'string', title: 'Linguagem'},
+        {name: 'code', type: 'text', rows: 6, title: 'Código', validation: (Rule) => Rule.required()},
+      ],
+      preview: {
+        select: {title: 'filename', subtitle: 'language'},
+        prepare({title, subtitle}) {
+          return {title: title || 'Bloco de código', subtitle: subtitle || 'Código'}
+        },
+      },
     }),
     defineArrayMember({
       name: 'embed',

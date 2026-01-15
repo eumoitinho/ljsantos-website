@@ -193,10 +193,11 @@ export default function PPTanksPage() {
                   <TranslatedContent translationKey="ppTanks.types.horizontal.feature4" />
                 </li>
               </ul>
-              <Link href="/solicite-orcamento">
-                <button className="text-green-700 font-semibold hover:text-green-800">
-                  <TranslatedContent translationKey="ppTanks.types.vertical.requestInfo" /> →
-                </button>
+              <Link
+                href="/solicite-orcamento"
+                className="text-green-700 font-semibold hover:text-green-800 inline-flex items-center"
+              >
+                <TranslatedContent translationKey="ppTanks.types.vertical.requestInfo" /> →
               </Link>
             </div>
 
@@ -228,10 +229,11 @@ export default function PPTanksPage() {
                   <TranslatedContent translationKey="ppTanks.types.vertical.feature4" />
                 </li>
               </ul>
-              <Link href="/solicite-orcamento">
-                <button className="text-green-700 font-semibold hover:text-green-800">
-                  <TranslatedContent translationKey="ppTanks.types.vertical.requestInfo" /> →
-                </button>
+              <Link
+                href="/solicite-orcamento"
+                className="text-green-700 font-semibold hover:text-green-800 inline-flex items-center"
+              >
+                <TranslatedContent translationKey="ppTanks.types.vertical.requestInfo" /> →
               </Link>
             </div>
 
@@ -263,10 +265,11 @@ export default function PPTanksPage() {
                   <TranslatedContent translationKey="ppTanks.types.process.feature4" />
                 </li>
               </ul>
-              <Link href="/solicite-orcamento">
-                <button className="text-green-700 font-semibold hover:text-green-800">
-                  <TranslatedContent translationKey="ppTanks.types.vertical.requestInfo" /> →
-                </button>
+              <Link
+                href="/solicite-orcamento"
+                className="text-green-700 font-semibold hover:text-green-800 inline-flex items-center"
+              >
+                <TranslatedContent translationKey="ppTanks.types.vertical.requestInfo" /> →
               </Link>
             </div>
           </div>
